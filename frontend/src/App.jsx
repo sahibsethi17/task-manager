@@ -99,7 +99,9 @@ function App() {
               <div>
                 <h2 className="text-lg font-semibold">{task.title}</h2>
                 <p className="text-gray-400">{task.description}</p>
-
+                <p className="text-gray-500 text-sm">
+                  Created: {new Date(task.createdAt).toLocaleString()}
+                </p>
                 <select
                   className="bg-gray-700 text-white text-sm px-2 py-1 rounded mt-2"
                   value={task.status}
