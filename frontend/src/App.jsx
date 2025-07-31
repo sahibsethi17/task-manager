@@ -59,6 +59,7 @@ function App() {
   }, []);
 
   return (
+    // Used Generative AI to help with the Tailwind CSS styling
     <div className="min-h-screen bg-dark text-white font-sans p-6">
       <h1 className="text-4xl font-bold mb-10 text-center">Task Manager</h1>
 
