@@ -19,7 +19,7 @@ This is a full-stack Task Manager app built with the MERN Stack (**MongoDB**, **
 
 ## Tech Stack
 
-- **Frontend**: React, Vite, TailwindCSS, Axios
+- **Frontend**: React, Vite, TailwindCSS
 - **Backend**: Express.js, Node.js, Mongoose
 - **Database**: MongoDB Atlas
 - **Deployment**: Render (backend) + Vercel (frontend)
@@ -77,10 +77,7 @@ VITE_API_URL={your-deployed-backend-link}
 
 ## Deployment Instructions
 
-- **Backend**: Deploy on Render
-- **Frontend**: Deploy on Vercel
-
-Make sure to set your environment variables on both platforms.
+Deploy backend on Render, and frontend on Vercel. Make sure to set your environment variables on both platforms.
 
 ---
 
@@ -110,4 +107,4 @@ Another challenge I faced was using Tailwind to get dark background and responsi
 
 ---
 
-## THANKS
+## THANKS!
