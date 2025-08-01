@@ -95,7 +95,7 @@ One of the challenges I ran into was I couldn't connect the frontend to the back
 
 Another challenge that I had faced was IP whitelisting problems during Render deployment with MongoDB Atlas. My solution to this problem was adding the Render outbound IP address to the list of IP addresses accessible to the database.
 
-Another challenge I faced was using Tailwind to get dark background and responsiveness working correctly. My solution to this was I created a dark theme in the tailwind.config.js for theme consistency across the whole UI.
+Another challenge I faced was using Tailwind to get dark background and responsiveness working correctly. My solution to this was I prompted Generative AI to provide a solution for a dark theme for the application, and it had suggested creating a dark theme in the tailwind.config.js for theme consistency across the whole UI, which I had implemented.
 
 ---
 
