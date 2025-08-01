@@ -1,5 +1,7 @@
 # Task Manager
 
+## [DEPLOYED LINK ON VERCEL](https://task-manager-cyan-six.vercel.app/)
+
 This is a full-stack Task Manager app built with the MERN Stack (**MongoDB**, **Express**, **React**, & **Node.js**). Users can add, edit, delete, and track tasks with different statuses. Users can also filter their tasks from their respective statuses and date created.
 
 ---
