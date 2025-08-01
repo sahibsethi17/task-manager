@@ -5,6 +5,8 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [statusFilter, setStatusFilter] = useState('');
+  const [sortOrder, setSortOrder] = useState('newest');
   const [newTask, setNewTask] = useState({
     title: '',
     description: '',
@@ -54,6 +56,15 @@ function App() {
     }
   };
 
+  // BONUS : filter & sort tasks
+  const filteredTasks = tasks
+    .filter((task) => (statusFilter ? task.status === statusFilter : true))
+    .sort((a, b) => {
+      const dateA = new Date(a.createdAt);
+      const dateB = new Date(b.createdAt);
+      return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -92,7 +103,30 @@ function App() {
 
         {/* task list */}
         <div className="w-full lg:w-1/2 space-y-4">
-          {tasks.map((task) => (
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+            {/* status filter */}
+            <select
+              className="bg-gray-700 text-white px-3 py-2 rounded"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+            >
+              <option value="">All Statuses</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+
+            {/* sort by date */}
+            <select
+              className="bg-gray-700 text-white px-3 py-2 rounded"
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value)}
+            >
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+          </div>
+          {filteredTasks.map((task) => (
             <div
               key={task._id}
               className="bg-gray-800 rounded p-4 flex justify-between items-start"
